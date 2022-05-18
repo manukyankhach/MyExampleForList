@@ -37,6 +37,19 @@ namespace ListExemple
                 Console.WriteLine(string.Format("{0}---{1}", myList[i].FirstName, myList[i].LastName));
             }
 
+            Console.WriteLine("=============================");
+            Console.WriteLine();
+            //=============================//
+            Console.WriteLine("ListOfReferenceSource Exemple");
+            ListOfReferenceSource<ParameterOfList> referenceSource = new ListOfReferenceSource<ParameterOfList>(5);
+            for (int i = 0; i < 5; i++)
+            {
+                ParameterOfList list = new ParameterOfList();
+                list.FirstName = $"FirstName{i}";
+                list.LastName = $"LastName{i}";
+                referenceSource.Add(list);
+                Console.WriteLine(string.Format("{0}---{1}", referenceSource[i].FirstName, referenceSource[i].LastName));
+            }
             Console.ReadLine();
         }
     }
